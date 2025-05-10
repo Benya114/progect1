@@ -1,0 +1,90 @@
+
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="pages">
+    
+    <div class="page">
+      <header>
+       <h2>Дракони</h2>
+        <img src="https://img.goodfon.ru/wallpaper/big/5/76/drakon-krylya-roga-chernyy-fon.webp" width="40%" style="border-radius: 10px">
+        <p>Символ могутності в багатьох культурах.</p>
+      </section>
+      <section>
+        <h2>Фенікс</h2>
+        <img src="https://img.goodfon.ru/wallpaper/big/2/fa/feniks-ogon-ptica-krylya.webp" width="40%" style="border-radius: 10px">
+        <p>Оновлення та безсмертя через вогонь.</p>
+      </section>
+      <section>
+        <h2>Кентаври</h2>
+        <img src="https://kulturologia.ru/files/u18214/centaurs15.jpg" width="40%" style="border-radius: 10px">
+        <p>Напівконі, напівлюди — символ єднання дикості та розуму.</p>
+      </section>
+      <section>
+        <h2>Русалки</h2>
+        <img src="https://img.goodfon.ru/wallpaper/big/7/bd/rusalka-mermaid-art-vzgliad-pod-vodoi-zolotaia-rybka-podvodn.webp" width="40%" style="border-radius: 10px">
+        <p>Красиві, загадкові та небезпечні водяні духи.</p>
+      </section>
+    </div>
+
+   
+    <div class="page">
+      <header>
+        <h1>Додаткові Легенди</h1>
+        <p>Ще більше цікавих історій зі світу міфів</p>
+      </header>
+      <section>
+        <h2>Грифони</h2>
+        <p>Грифони — істоти з тілом лева та головою орла. Символізують хоробрість і охороняють скарби.</p>
+      </section>
+      <section>
+        <h2>Єдинороги</h2>
+        <p>Єдинороги — магічні коні з рогом на чолі. Втілюють чистоту, доброту та зцілення.</p>
+      </section>
+    </div>
+
+ 
+    <div class="page">
+      <header>
+        <h1>Міфічна Рулетка</h1>
+        <p>Обери свою істоту!</p>
+      </header>
+      <div class="wheel-container">
+        <div class="wheel" id="wheel">
+          <div class="segment">Дракон</div>
+          <div class="segment">Фенікс</div>
+          <div class="segment">Кентавр</div>
+          <div class="segment">Русалка</div>
+          <div class="segment">Грифон</div>
+          <div class="segment">Єдиноріг</div>
+        </div>
+        <button id="spin">Обертати</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button onclick="goToPage(0)">Міфічні Істоти</button>
+    <button onclick="goToPage(1)">Міфічні Легенди</button>
+    <button onclick="goToPage(2)">Міфічна Рулетка</button>
+  </div>
+
+  <script>
+    function goToPage(index) {
+      document.getElementById('pages').style.transform = `translateX(-${index * 100}vw)`;
+    }
+
+    const wheel = document.getElementById('wheel');
+    document.getElementById('spin').addEventListener('click', () => {
+      const deg = 360 * 8 + Math.floor(Math.random() * 10000);
+      wheel.style.transform = `rotate(${deg}deg)`;
+    });
+  </script>
+</body>
+</html>
